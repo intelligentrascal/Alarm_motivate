@@ -1,0 +1,7 @@
+name = "motivalarm-proxy"
+main = "index.ts"
+compatibility_date = "2024-11-01"
+compatibility_flags = ["nodejs_compat"]
+
+[vars]
+# Set META_APP_TOKEN via: wrangler secret put META_APP_TOKEN
