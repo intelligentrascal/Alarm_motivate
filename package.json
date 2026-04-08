@@ -1,0 +1,31 @@
+{
+  "name": "ha-sketchbook-cards",
+  "version": "1.0.0",
+  "description": "Hand-drawn sketchbook-style custom cards for Home Assistant dashboards",
+  "main": "dist/ha-sketchbook-cards.js",
+  "scripts": {
+    "build": "rollup -c",
+    "dev": "rollup -c --watch"
+  },
+  "keywords": [
+    "home-assistant",
+    "lovelace",
+    "custom-card",
+    "hacs",
+    "sketchbook",
+    "hand-drawn"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "lit": "^3.2.0"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^28.0.0",
+    "@rollup/plugin-node-resolve": "^16.0.0",
+    "@rollup/plugin-terser": "^0.4.0",
+    "@rollup/plugin-typescript": "^12.0.0",
+    "rollup": "^4.0.0",
+    "tslib": "^2.7.0",
+    "typescript": "^5.6.0"
+  }
+}
