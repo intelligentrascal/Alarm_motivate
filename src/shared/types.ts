@@ -83,3 +83,34 @@ export interface ClockCardConfig {
   show_seconds?: boolean;
   time_zone?: string;
 }
+
+export interface ChipCardConfig {
+  type: string;
+  chips: ChipConfig[];
+}
+
+export interface ChipConfig {
+  type: 'entity' | 'action' | 'template';
+  entity?: string;
+  icon?: string;
+  name?: string;
+  content?: string;
+  tap_action?: ActionConfig;
+}
+
+export interface PersonCardConfig extends CardConfig {
+  show_location?: boolean;
+  show_battery?: boolean;
+  battery_entity?: string;
+}
+
+export interface TileCardConfig extends CardConfig {
+  compact?: boolean;
+  hide_icon?: boolean;
+}
+
+export interface CameraCardConfig extends CardConfig {
+  camera_view?: 'auto' | 'live';
+  show_controls?: boolean;
+  aspect_ratio?: string;
+}

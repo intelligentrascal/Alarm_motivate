@@ -10,6 +10,10 @@ import './cards/sketch-media-player-card';
 import './cards/sketch-cover-card';
 import './cards/sketch-alarm-panel-card';
 import './cards/sketch-clock-card';
+import './cards/sketch-chip-card';
+import './cards/sketch-person-card';
+import './cards/sketch-tile-card';
+import './cards/sketch-camera-card';
 
 declare global {
   interface Window {
@@ -78,10 +82,34 @@ window.customCards.push(
     name: 'Sketch Clock Card',
     description: 'Analog and digital clock with date display (no entity required)',
     preview: true,
+  },
+  {
+    type: 'sketch-chip-card',
+    name: 'Sketch Chip Card',
+    description: 'Compact pills for quick actions, scene triggers, and status indicators',
+    preview: true,
+  },
+  {
+    type: 'sketch-person-card',
+    name: 'Sketch Person Card',
+    description: 'Person presence card with avatar, location, and device battery',
+    preview: true,
+  },
+  {
+    type: 'sketch-tile-card',
+    name: 'Sketch Tile Card',
+    description: 'Ultra-compact single-line entity row with toggle for maximum density',
+    preview: true,
+  },
+  {
+    type: 'sketch-camera-card',
+    name: 'Sketch Camera Card',
+    description: 'Camera snapshot display with refresh and fullscreen controls',
+    preview: true,
   }
 );
 
-const VERSION = '1.0.0';
+const VERSION = '1.1.0';
 console.info(
   `%c SKETCH-CARDS %c v${VERSION} `,
   'background:#faf7f0;color:#2a2a2a;font-weight:bold;font-family:cursive;padding:2px 6px;border:1px solid #2a2a2a;border-radius:2px;',

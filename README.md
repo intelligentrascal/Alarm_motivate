@@ -16,6 +16,10 @@ Hand-drawn, sketchbook-style custom cards for Home Assistant dashboards. Inspire
 | Cover Card | `sketch-cover-card` | Blinds/cover controls with position slider |
 | Alarm Panel Card | `sketch-alarm-panel-card` | Alarm keypad with arm/disarm controls |
 | Clock Card | `sketch-clock-card` | Analog/digital clock with date (no entity required) |
+| **Chip Card** | `sketch-chip-card` | Compact pills for quick actions and status (mobile top bar) |
+| **Person Card** | `sketch-person-card` | Presence card with avatar, location, and device battery |
+| **Tile Card** | `sketch-tile-card` | Ultra-compact single-line entity with toggle (mobile-first) |
+| **Camera Card** | `sketch-camera-card` | Camera snapshot with refresh and fullscreen controls |
 
 ## Design
 
@@ -131,6 +135,46 @@ mode: both
 show_date: true
 show_seconds: true
 name: My Clock
+```
+
+### Chip Card (Mobile Top Bar)
+```yaml
+type: custom:sketch-chip-card
+chips:
+  - type: entity
+    entity: light.living_room
+    tap_action:
+      action: toggle
+  - type: entity
+    entity: alarm_control_panel.home
+  - type: action
+    icon: mdi:home
+    name: Home
+    tap_action:
+      action: navigate
+      navigation_path: /lovelace/0
+```
+
+### Person Card
+```yaml
+type: custom:sketch-person-card
+entity: person.john
+show_location: true
+show_battery: true
+battery_entity: sensor.johns_phone_battery
+```
+
+### Tile Card (Compact)
+```yaml
+type: custom:sketch-tile-card
+entity: switch.porch_light
+```
+
+### Camera Card
+```yaml
+type: custom:sketch-camera-card
+entity: camera.front_door
+show_controls: true
 ```
 
 ## Configuration Options
