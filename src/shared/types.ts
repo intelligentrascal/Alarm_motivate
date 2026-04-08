@@ -114,3 +114,47 @@ export interface CameraCardConfig extends CardConfig {
   show_controls?: boolean;
   aspect_ratio?: string;
 }
+
+export interface PopupCardConfig {
+  type: string;
+  hash: string;
+  name?: string;
+  icon?: string;
+  auto_close?: number;
+  width?: string;
+  cards?: any[];
+}
+
+export interface HorizontalButtonsStackConfig {
+  type: string;
+  buttons: NavButton[];
+  style?: 'fixed' | 'inline';
+}
+
+export interface NavButton {
+  name: string;
+  icon: string;
+  hash?: string;
+  navigation_path?: string;
+  entity?: string;
+}
+
+export interface SubButtonCardConfig extends CardConfig {
+  sub_buttons: SubButton[];
+  columns?: number;
+  collapsible?: boolean;
+}
+
+export interface SubButton {
+  entity?: string;
+  icon?: string;
+  name?: string;
+  show_state?: boolean;
+  tap_action?: ActionConfig;
+}
+
+export interface SeparatorCardConfig {
+  type: string;
+  name?: string;
+  icon?: string;
+}

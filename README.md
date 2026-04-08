@@ -20,6 +20,10 @@ Hand-drawn, sketchbook-style custom cards for Home Assistant dashboards. Inspire
 | **Person Card** | `sketch-person-card` | Presence card with avatar, location, and device battery |
 | **Tile Card** | `sketch-tile-card` | Ultra-compact single-line entity with toggle (mobile-first) |
 | **Camera Card** | `sketch-camera-card` | Camera snapshot with refresh and fullscreen controls |
+| **Pop-up Card** | `sketch-popup-card` | Hash-triggered slide-up modal for organizing cards |
+| **Horizontal Buttons Stack** | `sketch-horizontal-buttons-stack` | Sticky footer nav bar with room buttons |
+| **Sub-Button Card** | `sketch-sub-button-card` | Entity card with expandable action button grid |
+| **Separator Card** | `sketch-separator-card` | Hand-drawn wavy line divider with optional label |
 
 ## Design
 
@@ -175,6 +179,77 @@ entity: switch.porch_light
 type: custom:sketch-camera-card
 entity: camera.front_door
 show_controls: true
+```
+
+### Pop-up Card (Bubble-style Modal)
+```yaml
+type: custom:sketch-popup-card
+hash: kitchen
+name: Kitchen
+icon: mdi:silverware-fork-knife
+auto_close: 30
+cards:
+  - type: custom:sketch-light-card
+    entity: light.kitchen
+  - type: custom:sketch-sensor-card
+    entity: sensor.kitchen_temperature
+  - type: custom:sketch-tile-card
+    entity: switch.kitchen_fan
+```
+Open with `#kitchen` in URL or via navigate action from any card/chip.
+
+### Horizontal Buttons Stack (Footer Nav)
+```yaml
+type: custom:sketch-horizontal-buttons-stack
+style: fixed
+buttons:
+  - name: Home
+    icon: mdi:home
+    hash: home
+  - name: Lights
+    icon: mdi:lightbulb-group
+    hash: lights
+  - name: Climate
+    icon: mdi:thermostat
+    hash: climate
+  - name: Security
+    icon: mdi:shield-home
+    hash: security
+  - name: Media
+    icon: mdi:speaker
+    hash: media
+```
+
+### Sub-Button Card (Expandable Actions)
+```yaml
+type: custom:sketch-sub-button-card
+entity: light.living_room
+collapsible: true
+columns: 3
+sub_buttons:
+  - entity: light.lamp
+    name: Lamp
+  - icon: mdi:movie
+    name: Movie Mode
+    tap_action:
+      action: call-service
+      service: scene.turn_on
+      service_data:
+        entity_id: scene.movie
+  - icon: mdi:power
+    name: All Off
+    tap_action:
+      action: call-service
+      service: light.turn_off
+      service_data:
+        entity_id: all
+```
+
+### Separator Card
+```yaml
+type: custom:sketch-separator-card
+name: Lighting
+icon: mdi:lightbulb
 ```
 
 ## Configuration Options

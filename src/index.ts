@@ -14,6 +14,10 @@ import './cards/sketch-chip-card';
 import './cards/sketch-person-card';
 import './cards/sketch-tile-card';
 import './cards/sketch-camera-card';
+import './cards/sketch-popup-card';
+import './cards/sketch-horizontal-buttons-stack';
+import './cards/sketch-sub-button-card';
+import './cards/sketch-separator-card';
 
 declare global {
   interface Window {
@@ -106,10 +110,34 @@ window.customCards.push(
     name: 'Sketch Camera Card',
     description: 'Camera snapshot display with refresh and fullscreen controls',
     preview: true,
+  },
+  {
+    type: 'sketch-popup-card',
+    name: 'Sketch Pop-up Card',
+    description: 'Hash-triggered modal overlay for organizing cards in slide-up panels',
+    preview: false,
+  },
+  {
+    type: 'sketch-horizontal-buttons-stack',
+    name: 'Sketch Horizontal Buttons Stack',
+    description: 'Sticky footer navigation bar with scrollable room/view buttons',
+    preview: true,
+  },
+  {
+    type: 'sketch-sub-button-card',
+    name: 'Sketch Sub-Button Card',
+    description: 'Entity card with expandable secondary action button grid',
+    preview: true,
+  },
+  {
+    type: 'sketch-separator-card',
+    name: 'Sketch Separator Card',
+    description: 'Hand-drawn wavy line divider with optional label for organizing cards',
+    preview: true,
   }
 );
 
-const VERSION = '1.1.0';
+const VERSION = '1.2.0';
 console.info(
   `%c SKETCH-CARDS %c v${VERSION} `,
   'background:#faf7f0;color:#2a2a2a;font-weight:bold;font-family:cursive;padding:2px 6px;border:1px solid #2a2a2a;border-radius:2px;',
